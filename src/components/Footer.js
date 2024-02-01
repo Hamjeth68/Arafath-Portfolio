@@ -7,9 +7,11 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import data from '../Data/data.json'
+
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
+  
   return (
     <Container fluid className="footer">
       <Row>
