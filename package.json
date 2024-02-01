@@ -1,8 +1,7 @@
 {
-  "name": "arafath-portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio Web-app",
-  "main": "index.js",
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^2.2.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -58,16 +57,5 @@
     "@types/react-pdf": "^7.0.0",
     "gh-pages": "^6.1.1",
     "typescript": "^5.3.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hamjeth68/Arafath-Portfolio.git"
-  },
-  "author": "Hamjeth Misree",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hamjeth68/Arafath-Portfolio/issues"
-  },
-  "homepage": "https://github.com/Hamjeth68/Arafath-Portfolio#readme"
-
+  }
 }

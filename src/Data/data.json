@@ -1,0 +1,73 @@
+{
+    "PersonalDetails": {
+        "Name": "Arafath Misree",
+        "Designation": "Software Architect",
+        "Location": "Colombo, Sri Lanka",
+        "Contact": "+94772219957",
+        "Email": "amisree74@gmail.com",
+        "LinkedIn": "LinkedIn Profile URL",
+        "GitHub": "GitHub Profile URL"
+    },
+    "CareerObjective": "Having obtained 9 years of industry exposure in my software engineering journey I wish to pursue a long-term career in the IT industry and to utilize my academic knowledge and skills towards achieving technological development through creativity and innovation in the fields of Software Engineering and IT Management by turning researches into programs. I am seeking a position in a dynamic environment where new technologies are being developed.",
+    "Education": [
+        {
+            "Degree": "BSc (Hons) Software Engineering",
+            "Institution": "University of the West of England, Bristol",
+            "Year": "2015 - 2018"
+        },
+        {
+            "Program": "Java SE application development foundation program",
+            "Institution": "JAVA Institute",
+            "Year": "2015 - 2016"
+        },
+        {
+            "School": "North Shore College Colombo",
+            "Qualifications": "Merit in IT and Physics, Simple Pass in Core Mathematics"
+        },
+        {
+            "School": "Carey College Colombo",
+            "Year": "2010",
+            "Qualifications": "GCE O/L with Two A's, One B, Five C's, and one S"
+        },
+        {
+            "Program": "Diploma in English",
+            "Institution": "College of Higher Education (ACHE)",
+            "Year": "2009"
+        }
+    ],
+    "TechnicalSkills": [
+        "Native android JAVA",
+        "JavaScript",
+        "Angular Core",
+        "Kotlin",
+        "React - Native (Android & IOS)",
+        "Flutter",
+        "React.js / Expo",
+        "Next.js",
+        "Graph QL",
+        "Continues Integration / Continues Delivery Tools",
+        "E2E Testing",
+        "Agile Practitioner",
+        "Solution Designing with UML",
+        "Security Compliance for Web / Mobile",
+        "CDD Development",
+        "TDD Development",
+        "Microsoft App center",
+        "AWS",
+        "Cloud Native"
+    ],
+    "ProfessionalExperience": [
+        {
+            "Company": "Software Consultancy Company (NDA)",
+            "Period": "2021 - Present",
+            "Details": "Involved in various project roles including blue printing high level solution design, architectural decision making, mentoring the team, and more."
+        }
+    ],
+    "Projects": [
+        {
+            "Name": "Selfcare Customer",
+            "Technologies": "Microapps architecture, React Native, Java script, Type script, Redux, OKHTTP, IAM Config Manager, Kubernetes, Spring, Graphql, Apollo, Webpack, Graphana, Kibana, Firebase, FCM, MIGS, Stripe, VISA, Graphql Gateway, AWS, CMS Content Authering, Open ID connect, OSS Auth 2.0, Bolb builder, Objective C, JAVA Micro service",
+            "Description": "A front-facing customer application focusing on providing self-care services like KYC, store Payments, billing, personalized offers, and more."
+        }
+    ]
+}
