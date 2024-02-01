@@ -1,6 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
+import data from "../../Data/data.json"
+
+
 
 function AboutCard() {
   return (
@@ -8,9 +11,9 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Hamjeth Misree </span>
+            Hi Everyone, I am <span className="purple">{data.PersonalDetails.Name}</span>
             from <span className="purple"> Sri Lanka, Colombo.</span>
-            <br />I am a Senior Software Engineer working for a repudated company
+            <br />I am a {data.PersonalDetails.Designation} working for a repudated company
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
@@ -30,7 +33,7 @@ function AboutCard() {
           <p style={{ color: "rgb(155 126 172)" }}>
             "Strive to build things that make a difference!"{" "}
           </p>
-          <footer className="blockquote-footer">Hamjeth</footer>
+          <footer className="blockquote-footer">{data.PersonalDetails.Name}</footer>
         </blockquote>
       </Card.Body>
     </Card>
