@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
@@ -7,6 +7,9 @@ import Type from "./Type";
 import data from '../../Data/data.json'
 
 function Home() {
+
+
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -23,7 +26,9 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> {data.PersonalDetails.Name}</strong>
+              
+                <strong  className="main-name">{data.PersonalDetails.Name}</strong>
+
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
