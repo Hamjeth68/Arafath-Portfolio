@@ -14,26 +14,26 @@ function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Fetch the project data from the URL
     fetch('https://hamjeth68.github.io/Json-server/api/db.json')
       .then(response => response.json())
       .then(data => {
-        // Assuming the data structure matches what your component expects
-        // Update the state with the fetched projects
-        setProjects(data.Projects); // Adjust this if the actual path within the data differs
+        setProjects(data.Projects);
       })
       .catch(error => console.log('Error fetching data: ', error));
   }, []);
 
-   // Function to select an image based on the project name or other criteria
-   const selectProjectImage = (projectName) => {
-    // Example logic to select an image
+  const selectProjectImage = (projectName) => {
     switch (projectName) {
-      // Match project name to an image, add more cases as needed
-      default: return bitsOfCode; // Default image if no match is found
+      // Add your project names and corresponding image imports here
+      case 'Leaf Project': return leaf;
+      case 'Emotion Project': return emotion;
+      case 'Code Editor': return editor;
+      case 'Chatify': return chatify;
+      case 'Suicide Prevention': return suicide;
+      case 'Bits of Code': return bitsOfCode;
+      default: return bitsOfCode;
     }
   };
-
 
   return (
     <Container fluid className="project-section">
@@ -52,8 +52,11 @@ function Projects() {
                 imgPath={selectProjectImage(project.Name)}
                 isBlog={false}
                 title={project.Name}
-                description={project.Description}
-                link={project.References && project.References[0]} // Using the first reference as the link, adjust as necessary
+                technologies={project.Technologies} // Ensure this matches the key in your JSON
+                role={project.Role} // Ensure this matches the key in your JSON
+                description={project.Description} // Assuming you want to include the description
+                ghLink={project.ghLink} // Assuming there's a GitHub link in your JSON
+                demoLink={project.demoLink} // Assuming there's a demo link in your JSON
               />
             </Col>
           ))}
