@@ -14,26 +14,29 @@ function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Fetch the project data from the URL
-    fetch('https://hamjeth68.github.io/Json-server/api/db.json')
-      .then(response => response.json())
-      .then(data => {
-        // Assuming the data structure matches what your component expects
-        // Update the state with the fetched projects
-        setProjects(data.Projects); // Adjust this if the actual path within the data differs
-      })
-      .catch(error => console.log('Error fetching data: ', error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://hamjeth68.github.io/Json-server/api/db.json');
+        const data = await response.json();
+        setProjects(data.Projects);
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+    fetchData();
   }, []);
 
-   // Function to select an image based on the project name or other criteria
-   const selectProjectImage = (projectName) => {
-    // Example logic to select an image
-    switch (projectName) {
-      // Match project name to an image, add more cases as needed
-      default: return bitsOfCode; // Default image if no match is found
-    }
+  const selectProjectImage = (project) => {
+    const imageMap = {
+      'Leaf Project': leaf,
+      'Emotion Project': emotion,
+      'Code Editor': editor,
+      'Chatify': chatify,
+      'Suicide Prevention': suicide,
+      'Bits of Code': bitsOfCode,
+    };
+    return project.img || imageMap[project.Name] || bitsOfCode;
   };
-
 
   return (
     <Container fluid className="project-section">
@@ -49,11 +52,14 @@ function Projects() {
           {projects.map((project, index) => (
             <Col md={4} className="project-card" key={index}>
               <ProjectCard
-                imgPath={selectProjectImage(project.Name)}
+                imgPath={selectProjectImage(project)}
                 isBlog={false}
                 title={project.Name}
+                technologies={project.Technologies}
+                role={project.Role}
                 description={project.Description}
-                link={project.References && project.References[0]} // Using the first reference as the link, adjust as necessary
+                ghLink={project.ghLink}
+                demoLink={project.demoLink}
               />
             </Col>
           ))}

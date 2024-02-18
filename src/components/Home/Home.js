@@ -26,8 +26,7 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-              
-                <strong  className="main-name">{data.PersonalDetails.Name}</strong>
+                <strong  className="main-name"> {data.PersonalDetails.Name}</strong>
 
               </h1>
 

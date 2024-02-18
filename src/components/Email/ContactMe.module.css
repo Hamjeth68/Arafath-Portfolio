@@ -1,0 +1,81 @@
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.contactForm {
+  background-color: #2d1950;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 100%;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.contactForm .form-group {
+  margin-bottom: 1.5rem; /* Increased space between form groups */
+}
+
+.contactForm h2 {
+  color: #ffffff;
+  margin-bottom: 2rem; /* Increased space below the header for better visual separation */
+}
+
+.contactForm .form-label {
+  color: #adb5bd;
+}
+
+.contactForm .form-control {
+  background-color: #33354a;
+  border: none;
+  color: white;
+}
+
+.contactForm .form-control:focus {
+  background-color: #33354a;
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+
+.contactForm button {
+  background-color: #6c63ff;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem; /* Increased space before the button to prevent sticking */
+  width: auto; /* Adjust width as necessary */
+  padding: 0.5rem 2rem; /* Provide sufficient padding for aesthetics */
+}
+
+.contactForm button:hover {
+  background-color: #5a54d1;
+}
+
+.contactForm .alert {
+  margin-bottom: 1rem; /* Ensure alerts do not stick to inputs above */
+}
+
+@media (max-width: 768px) {
+  .contactForm {
+    padding: 1rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .contactSection {
+    padding: 25px 0;
+  }
+}
