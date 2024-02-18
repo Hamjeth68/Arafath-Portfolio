@@ -14,25 +14,28 @@ function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('https://hamjeth68.github.io/Json-server/api/db.json')
-      .then(response => response.json())
-      .then(data => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://hamjeth68.github.io/Json-server/api/db.json');
+        const data = await response.json();
         setProjects(data.Projects);
-      })
-      .catch(error => console.log('Error fetching data: ', error));
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+    fetchData();
   }, []);
 
-  const selectProjectImage = (projectName) => {
-    switch (projectName) {
-      // Add your project names and corresponding image imports here
-      case 'Leaf Project': return leaf;
-      case 'Emotion Project': return emotion;
-      case 'Code Editor': return editor;
-      case 'Chatify': return chatify;
-      case 'Suicide Prevention': return suicide;
-      case 'Bits of Code': return bitsOfCode;
-      default: return bitsOfCode;
-    }
+  const selectProjectImage = (project) => {
+    const imageMap = {
+      'Leaf Project': leaf,
+      'Emotion Project': emotion,
+      'Code Editor': editor,
+      'Chatify': chatify,
+      'Suicide Prevention': suicide,
+      'Bits of Code': bitsOfCode,
+    };
+    return project.img || imageMap[project.Name] || bitsOfCode;
   };
 
   return (
@@ -49,14 +52,14 @@ function Projects() {
           {projects.map((project, index) => (
             <Col md={4} className="project-card" key={index}>
               <ProjectCard
-                imgPath={selectProjectImage(project.Name)}
+                imgPath={selectProjectImage(project)}
                 isBlog={false}
                 title={project.Name}
-                technologies={project.Technologies} // Ensure this matches the key in your JSON
-                role={project.Role} // Ensure this matches the key in your JSON
-                description={project.Description} // Assuming you want to include the description
-                ghLink={project.ghLink} // Assuming there's a GitHub link in your JSON
-                demoLink={project.demoLink} // Assuming there's a demo link in your JSON
+                technologies={project.Technologies}
+                role={project.Role}
+                description={project.Description}
+                ghLink={project.ghLink}
+                demoLink={project.demoLink}
               />
             </Col>
           ))}
